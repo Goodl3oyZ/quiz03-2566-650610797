@@ -5,6 +5,8 @@ import { NextResponse } from "next/server";
 
 export const GET = async (request) => {
   readDB();
+  const rawAuthHeader = headers().get("authorization");
+  const token = rawAuthHeader.split(" ")[1];
 
   // return NextResponse.json(
   //   {
